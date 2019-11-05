@@ -1,34 +1,31 @@
-public class ConditionalStatement{
+public class ConditionalStatement {
     public static void main(String[] args) {
         int age;
-        float height;
-        char nameletter;
-        char sex;
         age = 28;
-        sex = 'M';
-        height = 1.92f;
-        nameletter = 'V';
         if (age > 20) {
             System.out.println("U,r so old!");
         }
+        char sex;
+        sex = 'M';
         if (sex == 'M') {
             System.out.println("U,r man!");
         }
         if (sex != 'M') {
             System.out.println("U,r women!");
         }
-
+        float height;
+        height = 1.92f;
         if (height > 1.80) {
             System.out.println("U,r so tall!");
         } else {
             System.out.println("U,r not tall");
-
         }
+        char nameletter;
+        nameletter ='V';
         if (nameletter == 'M') {
             System.out.println("Maybe u,r call Michel!?");
-
         } else if (nameletter == 'I') {
-            System.out.println("Maybe u,r call Ilisk!?");
+            System.out.println("Maybe u,r call Ilya!?");
         } else {
             System.out.println("U,r welcome Vladimir!");
         }
