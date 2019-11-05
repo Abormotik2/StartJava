@@ -3,7 +3,7 @@ public class Variable {
 	 byte processor = 1;
 	 short kernels  = 8;
 	 int model = 7700;
-	 long idproduct = 003308000000000;
+	 long idproduct = 33880088;
 	 float ram = 32.0f;
 	 double ramspeed = 3600.00d;
 	 char processorid = 'I';
