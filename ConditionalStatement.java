@@ -5,10 +5,11 @@ public class ConditionalStatement {
             System.out.println("U,r so old!");
         }
 
-        boolean sex = true;
-        if (sex = true) {
+        boolean isMan = true;
+        if (isMan = true) {
             System.out.println("U,r man!");
-        } else {
+        }
+        if (isMan = false) {
             System.out.println("U,r women!");
         }
 
@@ -19,10 +20,10 @@ public class ConditionalStatement {
             System.out.println("U,r not tall");
         }
 
-        char nameletter = 'V';
-        if (nameletter == 'M') {
+        char firstLetterName = 'V';
+        if (firstLetterName == 'M') {
             System.out.println("Maybe u,r call Michel!?");
-        } else if (nameletter == 'I') {
+        } else if (firstLetterName == 'I') {
             System.out.println("Maybe u,r call Ilya!?");
         } else {
             System.out.println("U,r welcome Vladimir!");
