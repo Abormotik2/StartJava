@@ -3,6 +3,7 @@ public class Calculator2 {
         int num1 = 8;
         int num2 = 3;
         char symbol = '^';
+        
         if (symbol == '+') {
             System.out.println(num1 + num2);
         } else if (symbol == '-') {
@@ -24,8 +25,3 @@ public class Calculator2 {
         }
     }
 }
-
-
-
-
-
