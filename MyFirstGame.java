@@ -1,28 +1,21 @@
-import java.util.Scanner;
-
 public class MyFirstGame {
-
-    static Scanner s = new Scanner(System.in);
-
     public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-        int ch;
-        int chisla = 100;
-        int num = (int) (Math.random() * chisla);
-        System.out.println("Guess the number from 0 to " + chisla);
-        while (true) {
-
-            ch = s.nextInt();
-            if (ch == num) {
-                System.out.println("U,r wish!!!Lesson done!");
-                break;
-            } else if (ch > num) {
+        int numComp = 52;
+        int numUser = 10;
+        System.out.println("Edit number from " + 0 + " to " + 100);
+        while (numComp != numUser) {
+            if (numUser > numComp) {
                 System.out.println("U,r number is bigger then mine");
-            } else {
+                numUser--;
+            } else if (numUser < 0 && numUser > 100) {
+                System.out.println("U,r number is not at game");
+                numUser = 0;
+            } else if (numUser < numComp) {
                 System.out.println("U,r number is smaller then mine");
-
+                numUser++;
             }
         }
-        s.close();
+        System.out.println("Great ur number like mine = " + numComp);
     }
 }
+
