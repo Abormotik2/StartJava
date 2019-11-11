@@ -1,6 +1,6 @@
 public class Person {
     String name = "Vasya";
-    char sex = 'M';
+    boolean isMan = true;
     int height = 192;
     double weight = 88.5d;
     int age = 28;
