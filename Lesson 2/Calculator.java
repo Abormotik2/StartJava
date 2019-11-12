@@ -2,24 +2,28 @@ import java.util.Scanner;
 
 public class Calculator {
     static Scanner s = new Scanner(System.in);
-    private int num1 = numFirst();
-    private char move = operation();
-    private int num2 = numSecond();
-    private int res = calc(num1, move, num2);
+    private int num1;
+    private char move;
+    private int res;
+    private int num2;
 
     public int getNum1() {
+
         return num1;
     }
 
     public void setNum1(int num1) {
+
         this.num1 = num1;
     }
 
     public char getMove() {
+
         return move;
     }
 
     public void setMove(char move) {
+
         this.move = move;
     }
 
@@ -28,14 +32,17 @@ public class Calculator {
     }
 
     public void setNum2(int num2) {
+
         this.num2 = num2;
     }
 
     public int getRes() {
+
         return res;
     }
 
     public void setRes(int res) {
+
         this.res = res;
     }
 
@@ -46,7 +53,6 @@ public class Calculator {
             return num4;
         } else {
             System.out.println("It's not positive number, or not number yet!");
-            s.next();
             return numFirst();
         }
     }
@@ -59,7 +65,6 @@ public class Calculator {
             return op;
         } else {
             System.out.println("Try again!");
-            s.next();
             return operation();
         }
     }
@@ -107,5 +112,3 @@ public class Calculator {
         }
     }
 }
-
-
