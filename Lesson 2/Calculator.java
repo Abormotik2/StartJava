@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class Calculator {
     static Scanner s = new Scanner(System.in);
     private int num1 = numFirst();
-    private int num2 = numSecond();
     private char move = operation();
+    private int num2 = numSecond();
     private int res = calc(num1, move, num2);
 
     public int getNum1() {
@@ -52,26 +52,15 @@ public class Calculator {
     }
 
     public static char operation() {
-        System.out.println("Edit operation: ");
-        char move;
+        System.out.println("Edit the operation: ");
+        char op;
         if (s.hasNext()) {
-            move = s.next().charAt(0);
-            return move;
+            op = s.next().charAt(0);
+            return op;
         } else {
-            System.out.println("Try again");
-            return operation();
-        }
-    }
-
-    public static int numSecond() {
-        System.out.println("Edit second number: ");
-        int num5;
-        if (s.hasNextInt() && (num5 = s.nextInt()) > 0) {
-            return num5;
-        } else {
-            System.out.println("It's not positive number, or not number yet!");
+            System.out.println("Try again!");
             s.next();
-            return numSecond();
+            return operation();
         }
     }
 
@@ -105,5 +94,18 @@ public class Calculator {
         }
         return res;
     }
+
+    public static int numSecond() {
+        System.out.println("Edit second number: ");
+        int num5;
+        if (s.hasNextInt() && (num5 = s.nextInt()) > 0) {
+            return num5;
+        } else {
+            System.out.println("It's not positive number, or not number yet!");
+            s.next();
+            return numSecond();
+        }
+    }
 }
+
 
