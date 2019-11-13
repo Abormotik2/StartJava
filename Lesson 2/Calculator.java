@@ -46,7 +46,7 @@ public class Calculator {
         this.res = res;
     }
 
-    public static int numFirst() {
+    public int numFirst() {
         System.out.println("Edit first number : ");
         int num4;
         if (s.hasNextInt() && (num4 = s.nextInt()) > 0) {
@@ -57,7 +57,7 @@ public class Calculator {
         }
     }
 
-    public static char operation() {
+    public char operation() {
         System.out.println("Edit the operation: ");
         char op;
         if (s.hasNext()) {
@@ -69,7 +69,7 @@ public class Calculator {
         }
     }
 
-    public static int calc(int num1, char move, int num2) {
+    public int calc(int num1, char move, int num2) {
         int res;
         switch (move) {
             case '+':
@@ -100,7 +100,7 @@ public class Calculator {
         return res;
     }
 
-    public static int numSecond() {
+    public int numSecond() {
         System.out.println("Edit second number: ");
         int num5;
         if (s.hasNextInt() && (num5 = s.nextInt()) > 0) {
