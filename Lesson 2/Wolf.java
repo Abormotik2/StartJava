@@ -1,15 +1,18 @@
 public class Wolf {
     private boolean isMan;
-
+    private String name;
+    private float weight;
+    private int age;
+    private char color;
     public boolean isMan() {
         return isMan;
     }
 
     public void setMan(boolean man) {
-        isMan = man;
+        this.isMan = man;
     }
 
-    private String name;
+    
     public String getName() {
         return name;
     }
@@ -17,8 +20,7 @@ public class Wolf {
     public void setName(String name) {
         this.name = name;
     }
-
-    private float weight;
+    
     public float getWeight() {
         return weight;
     }
@@ -26,8 +28,7 @@ public class Wolf {
     public void setWeight(float weight) {
         this.weight = weight;
     }
-
-    private int age;
+    
     public int getAge() {
         return age;
     }
@@ -39,8 +40,7 @@ public class Wolf {
             this.age = age;
         }
     }
-
-    private char color;
+    
     public char getColor() {
         return color;
     }
