@@ -3,31 +3,25 @@ import java.util.Scanner;
 public class CalculatorTest {
 
     public static void main(String[] args) {
-        Scanner t = new Scanner(System.in);
-        Calculator calc1 = new Calculator();
-        String yes = "yes";
-        String no = "no";
-
-        while (true) {
-            calc1.setNum1(calc1.numFirst());
-            calc1.setMove(calc1.operation());
-            calc1.setNum2(calc1.numSecond());
-            calc1.setRes(calc1.calc(calc1.getNum1(), calc1.getMove(), calc1.getNum2()));
-            System.out.println("Result: " + calc1.getRes());
-            System.out.println("Do u,r want to continue? Say yes or no...");
-            if (t.nextLine().equals(no)) {
-                break;
-            }
-            while (true) {
-                if (t.equals(yes)) {
-                    System.out.println("Go!");
+        Scanner scan = new Scanner(System.in);
+        Calculator calc = new Calculator();
+        do {
+            calc.setNum1(calc.numFirst());
+            calc.setMove(calc.operation());
+            calc.setNum2(calc.numSecond());
+            calc.setRes(calc.calc(calc.getNum1(), calc.getMove(), calc.getNum2()));
+            System.out.println("Result: " + calc.getRes());
+            while (!scan.equals("yes") || !scan.equals("no")) {
+                System.out.println("Do u,r want to continue? Say yes or no...");
+                if (scan.equals("no")) {
+                    System.out.println("Bye!");
                     break;
-                }
-               else if (t.equals(no)) {
-                    System.out.println("Bye");
+                } else if (scan.nextLine().equals("yes")) {
+                    System.out.println("Go!");
                     break;
                 }
             }
         }
+        while (scan.equals("yes"));
     }
 }
