@@ -1,29 +1,22 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class CalculatorTest {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner scan = new Scanner(System.in);
-        Calculator calc = new Calculator();
-        boolean flag = true;
+        Calculator calc;
         do {
-            calc.setNum1(calc.numFirst());
-            calc.setMove(calc.operation());
-            calc.setNum2(calc.numSecond());
-            calc.setRes(calc.calc(calc.getNum1(), calc.getMove(), calc.getNum2()));
+            calc = new Calculator();
+            System.out.println("Edit first number : ");
+            while (calc.setNum1(scan.nextInt()) < 0) ;
+            System.out.println("Edit the operation: ");
+            while (calc.setMove(scan.next().charAt(0)) == '\0') ;
+            System.out.println("Edit second number : ");
+            while (calc.setNum2(scan.nextInt()) < 0);
             System.out.println("Result: " + calc.getRes());
-            while (flag) {
-                System.out.println("Do u,r want to continue? Say yes or no...");
-                String answer = scan.nextLine();
-                if (answer.equals("no")) {
-                    System.out.println("Bye!");
-                    flag = false;
-                } else if (answer.equals("yes")) {
-                    System.out.println("Go!");
-                    break;
-                }
-            }
+            System.out.println("Do u,r want to continue? Say yes or no...");
         }
-        while (flag);
+        while (scan.nextLine().equals("yes"));
     }
 }
