@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class CalculatorTest {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         Calculator calc;
         do {
