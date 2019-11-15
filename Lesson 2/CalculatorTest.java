@@ -24,6 +24,6 @@ public class CalculatorTest {
                     break;
                 }
             }
-        }while (true);
+        } while (true);
     }
 }
