@@ -1,37 +1,15 @@
 public class JaegerTest {
 
     public static void main(String[] args) {
-        Jaeger jaegerOne = new Jaeger();
-        jaegerOne.setModelName("Gipsy Danger");
-        jaegerOne.setMark("Mark-3");
-        jaegerOne.setOrigin("USA");
-        jaegerOne.setHeight(79.25f);
-        jaegerOne.setWeight(1.980f);
-        jaegerOne.setSpeed(7);
-        jaegerOne.setStrength(8);
-        jaegerOne.setArmor(6);
-        allJaeger(jaegerOne);
-
-        Jaeger jaegerTwo = new Jaeger();
-        jaegerTwo.setModelName("Striker Eureka");
-        jaegerTwo.setMark("Mark-5");
-        jaegerTwo.setOrigin("USA");
-        jaegerTwo.setHeight(76.2f);
-        jaegerTwo.setWeight(1.850f);
-        jaegerTwo.setSpeed(10);
-        jaegerTwo.setStrength(10);
-        jaegerTwo.setArmor(9);
-        allJaeger(jaegerTwo);
-    }
-
-    private static void allJaeger(Jaeger jaegerTwo) {
-        System.out.println(jaegerTwo.getModelName());
-        System.out.println(jaegerTwo.getMark());
-        System.out.println(jaegerTwo.getOrigin());
-        System.out.println(jaegerTwo.getHeight());
-        System.out.println(jaegerTwo.getWeight());
-        System.out.println(jaegerTwo.getSpeed());
-        System.out.println(jaegerTwo.getStrength());
-        System.out.println(jaegerTwo.getArmor());
+        Jaeger jaegerOne = new Jaeger("Gipsy Danger", "Mark-3", "USA");
+        System.out.println(jaegerOne);
+        Jaeger jaegerTwo = new Jaeger("Striker Eureka", "Mark-5", "USA", 76.2f, 1.850f);
+        System.out.println(jaegerTwo);
+        Jaeger jaegerThree = new Jaeger("Cayote Tango", "Mark-1", "USA", 5 ,7,4);
+        System.out.println(jaegerThree);
+        jaegerOne.drift();
+        jaegerTwo.move();
+        jaegerTwo.useVortexCannon();
+        jaegerThree.scanKaiju();
     }
 }
