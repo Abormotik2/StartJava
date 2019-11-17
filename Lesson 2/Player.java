@@ -1,11 +1,8 @@
 public class Player {
     private String name;
-    private int number = 0;
-    public String getName() {
-        return name;
-    }
+    private int number;
 
-    public void setName(String name) {
+    public Player(String name) {
         this.name = name;
     }
 
@@ -15,5 +12,10 @@ public class Player {
 
     public void setNumber(int number) {
         this.number = number;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s", name);
     }
 }
