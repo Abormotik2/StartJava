@@ -1,21 +1,24 @@
+import java.util.Scanner;
+
 public class Player {
     private String name;
-    private int number;
+    private Scanner scanner;
 
-    public Player(String name) {
+    public Player(String name, Scanner scanner) {
         this.name = name;
+        this.scanner = scanner;
     }
 
-    public int getNumber() {
-        return number;
+    public int askNumber() {
+            System.out.println("Input number," + name);
+            return scanner.nextInt();
     }
-
-    public void setNumber(int number) {
-        this.number = number;
+    public String getName(){
+        return name;
     }
 
     @Override
     public String toString() {
-        return String.format("%s", name);
+        return name;
     }
 }
