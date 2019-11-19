@@ -18,6 +18,7 @@ public class GuessNumber {
         do {
             System.out.println(currentPlayer.getName() + " play game ");
             int count = scanner.nextInt();
+            currentPlayer.setNumber(count);
             if (count == pcNum) {
                 System.out.println("Great, " + currentPlayer.getName() + " win!");
                 break;
