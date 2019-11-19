@@ -4,12 +4,11 @@ public class GuessNumber {
     private int pcNum;
     private Player p1;
     private Player p2;
-    private Scanner scanner;
+    private Scanner scanner = new Scanner(System.in);
 
-    public GuessNumber(Player player1, Player player2, Scanner scanner) {
+    public GuessNumber(Player player1, Player player2) {
         this.p1 = player1;
         this.p2 = player2;
-        this.scanner = scanner;
     }
 
     public void startGame() {
@@ -18,7 +17,7 @@ public class GuessNumber {
         Player currentPlayer = p1;
         do {
             System.out.println(currentPlayer.getName() + " play game ");
-            int count = currentPlayer.askNumber();
+            int count = scanner.nextInt();
             if (count == pcNum) {
                 System.out.println("Great, " + currentPlayer.getName() + " win!");
                 break;
