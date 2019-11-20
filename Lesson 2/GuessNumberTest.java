@@ -11,12 +11,16 @@ public class GuessNumberTest {
         String answer;
         do {
             game.startGame();
-            System.out.println("Do u want to continue? Say yes or no...");
-            answer = scan.nextLine();
-            if (answer.equals("no")) {
-                System.out.println("Bye");
-                break;
+            while (true) {
+                System.out.println("Do u want to continue? Say yes or no...");
+                answer = scan.nextLine();
+                if (answer.equals("no")) {
+                    System.out.println("Bye");
+                    break;
+                } else if (answer.equals("yes")) {
+                    break;
+                }
             }
-        }while (answer.equals("yes"));
+        } while (answer.equals("yes"));
     }
 }
