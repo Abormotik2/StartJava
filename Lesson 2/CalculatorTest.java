@@ -16,7 +16,7 @@ public class CalculatorTest {
             while (calc.setNum2(scan.nextInt()) < 0);
             System.out.println("Result: " + calc.calculate());
             while (true) {
-                System.out.println("Do u want to continue? Say yes or no...");
+                System.out.print("Do u want to continue? Say yes or no...");
                 answer = scan.nextLine();
                 if (answer.equals("no")) {
                     System.out.println("Bye");
