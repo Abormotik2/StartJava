@@ -1,4 +1,4 @@
-package com.startjava.lesson_1.conditionalStatement;
+package com.startJava.lesson_1.conditionalStatement;
 
 public class ConditionalStatement {
     public static void main(String[] args) {
