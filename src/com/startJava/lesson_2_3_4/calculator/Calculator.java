@@ -7,6 +7,7 @@ public class Calculator {
     private char sign = '\0';
 
     public int setNum1(int num1) {
+
         if (num1 >= 0) {
             this.num1 = num1;
         } else {
@@ -15,7 +16,7 @@ public class Calculator {
         return num1;
     }
 
-    public char setMove(char sign) {
+    public char setOperation(char sign) {
         switch (sign) {
             case '+':
             case '-':
@@ -54,7 +55,9 @@ public class Calculator {
                 return (int) Math.pow(num1, num2);
             case '%':
                 return num1 % num2;
+            default:
+                System.out.println("Calc Error!");
         }
-        throw new IllegalArgumentException("Calc Error!");
+        return sign;
     }
 }
