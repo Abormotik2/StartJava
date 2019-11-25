@@ -8,6 +8,7 @@ public class CalculatorTest {
         Scanner scan = new Scanner(System.in);
         Calculator calc = new Calculator();
         String answer;
+        System.out.println("Calculator start!");
         do {
             System.out.print("Input the num1/operation/num2 into array by space: ");
             String expression = scan.nextLine();
