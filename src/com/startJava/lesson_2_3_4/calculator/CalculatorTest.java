@@ -14,19 +14,13 @@ public class CalculatorTest {
             String expression = scan.nextLine();
             String[] symbols = expression.split(" ");
             calc.setNum1(Integer.parseInt(symbols[0]));
-            calc.setMove(symbols[1].charAt(0));
+            calc.setOperation(symbols[1].charAt(0));
             calc.setNum2(Integer.parseInt(symbols[2]));
             System.out.println("Result: " + calc.calculate());
-            while (true) {
+            do {
                 System.out.print("Do u want to continue? Say yes or no...");
                 answer = scan.nextLine();
-                if (answer.equals("no")) {
-                    System.out.println("Bye");
-                    break;
-                } else if (answer.equals("yes")) {
-                    break;
-                }
-            }
+            } while (!answer.equals("no") && !answer.equals("yes"));
         }
         while (answer.equals("yes"));
     }
