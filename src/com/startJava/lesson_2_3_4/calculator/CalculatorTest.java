@@ -6,16 +6,15 @@ public class CalculatorTest {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        Calculator calc;
+        Calculator calc = new Calculator();
         String answer;
         do {
-            calc = new Calculator();
-            System.out.println("Edit first number : ");
-            while (calc.setNum1(scan.nextInt()) < 0) ;
-            System.out.println("Edit the operation: ");
-            while (calc.setMove(scan.next().charAt(0)) == '\0') ;
-            System.out.println("Edit second number : ");
-            while (calc.setNum2(scan.nextInt()) < 0);
+            System.out.print("Input the num1/operation/num2 into array by space: ");
+            String expression = scan.nextLine();
+            String[] symbols = expression.split(" ");
+            calc.setNum1(Integer.parseInt(symbols[0]));
+            calc.setMove(symbols[1].charAt(0));
+            calc.setNum2(Integer.parseInt(symbols[2]));
             System.out.println("Result: " + calc.calculate());
             while (true) {
                 System.out.print("Do u want to continue? Say yes or no...");
@@ -27,6 +26,7 @@ public class CalculatorTest {
                     break;
                 }
             }
-        } while (answer.equals("yes"));
+        }
+        while (answer.equals("yes"));
     }
 }
