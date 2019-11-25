@@ -10,7 +10,7 @@ public class Calculator {
         if (num1 >= 0) {
             this.num1 = num1;
         } else {
-            System.out.println("It's not positive number, or not number yet!");
+            System.out.println("First number not positive, or not number yet!");
         }
         return num1;
     }
@@ -35,7 +35,7 @@ public class Calculator {
         if (num2 >= 0) {
             this.num2 = num2;
         } else {
-            System.out.println("It's not positive number, or not number yet!");
+            System.out.println("Second number not positive, or not number yet!");
         }
         return num2;
     }
