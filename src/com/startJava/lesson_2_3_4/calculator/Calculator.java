@@ -6,14 +6,12 @@ public class Calculator {
     private int num2 = -1;
     private char sign = '\0';
 
-    public int setNum1(int num1) {
-
+    public void setNum1(int num1) {
         if (num1 >= 0) {
             this.num1 = num1;
         } else {
             System.out.println("First number not positive, or not number yet!");
         }
-        return num1;
     }
 
     public char setOperation(char sign) {
@@ -32,13 +30,12 @@ public class Calculator {
         return sign;
     }
 
-    public int setNum2(int num2) {
+    public void setNum2(int num2) {
         if (num2 >= 0) {
             this.num2 = num2;
         } else {
-            System.out.println("Second number not positive, or not number yet!");
+            System.out.println("First number not positive, or not number yet!");
         }
-        return num2;
     }
 
     public int calculate() {
