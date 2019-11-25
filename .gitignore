@@ -1,2 +1,5 @@
 
 *.class
+*.xml
+*.iml
+out/production/startJava/META-INF/startJava.kotlin_module
