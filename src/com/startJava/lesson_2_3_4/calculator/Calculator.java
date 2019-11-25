@@ -34,7 +34,7 @@ public class Calculator {
         if (num2 >= 0) {
             this.num2 = num2;
         } else {
-            System.out.println("First number not positive, or not number yet!");
+            System.out.println("Second number not positive, or not number yet!");
         }
     }
 
