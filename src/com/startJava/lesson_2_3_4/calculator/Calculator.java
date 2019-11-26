@@ -5,16 +5,18 @@ public class Calculator {
     private int num1 = -1;
     private int num2 = -1;
     private char sign = '\0';
+    private String[] symbols;
 
-    public void setNum1(int num1) {
-        if (num1 >= 0) {
-            this.num1 = num1;
-        } else {
-            System.out.println("First number not positive, or not number yet!");
-        }
+    public Calculator(String[] symbols) {
+        this.symbols = symbols;
     }
 
-    public char setOperation(char sign) {
+    public void operation() {
+        num1 = Integer.parseInt(symbols[0]);
+        if (num1 < 0) {
+            System.out.println("First number not positive, or not number yet!");
+        }
+        sign = symbols[1].charAt(0);
         switch (sign) {
             case '+':
             case '-':
@@ -22,18 +24,12 @@ public class Calculator {
             case '/':
             case '^':
             case '%':
-                this.sign = sign;
                 break;
             default:
                 System.out.println("Don't support type!");
         }
-        return sign;
-    }
-
-    public void setNum2(int num2) {
-        if (num2 >= 0) {
-            this.num2 = num2;
-        } else {
+        num2 = Integer.parseInt(symbols[2]);
+        if (num2 < 0) {
             System.out.println("Second number not positive, or not number yet!");
         }
     }
