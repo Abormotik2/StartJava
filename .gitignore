@@ -3,3 +3,4 @@
 *.xml
 *.iml
 out/production/startJava/META-INF/startJava.kotlin_module
+*.xml___jb_tmp___
