@@ -14,7 +14,7 @@ public class Calculator {
     public void operation() {
         num1 = Integer.parseInt(symbols[0]);
         if (num1 < 0) {
-            System.out.println("First number not positive, or not number yet!");
+            System.out.println("First number not positive!");
         }
         sign = symbols[1].charAt(0);
         switch (sign) {
@@ -30,7 +30,7 @@ public class Calculator {
         }
         num2 = Integer.parseInt(symbols[2]);
         if (num2 < 0) {
-            System.out.println("Second number not positive, or not number yet!");
+            System.out.println("Second number not positive!");
         }
     }
 
