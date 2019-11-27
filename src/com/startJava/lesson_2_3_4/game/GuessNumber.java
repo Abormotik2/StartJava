@@ -1,9 +1,9 @@
 package com.startJava.lesson_2_3_4.game;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class GuessNumber {
-    private int pcNum;
     private Player p1;
     private Player p2;
     private Scanner scanner = new Scanner(System.in);
@@ -14,15 +14,28 @@ public class GuessNumber {
     }
 
     public void startGame() {
-        pcNum = (int) (Math.random() * 101);
-        System.out.println("And now, lets start " + p1 + " and " + p2);
+        int pcNum = (int) (Math.random() * 101);
+        System.out.println("You have 10 attempts! " + p1 + " and " + p2);
         Player currentPlayer = p1;
+        p1.setArrayNum(initArray());
+        p2.setArrayNum(initArray());
         do {
             System.out.println(currentPlayer.getName() + " play game ");
+            int index = findIndex(currentPlayer.getArrayNum());
+            int[] nums1 = Arrays.copyOf(p1.getArrayNum(), index);
+            int[] nums2 = Arrays.copyOf(p2.getArrayNum(), index);
+            if (index == -1) {
+                System.out.println("Players, you have run out of attempts ");
+                System.out.println(Arrays.toString(nums1));
+                break;
+            }
             currentPlayer.setNumber(scanner.nextInt());
             int number = currentPlayer.getNumber();
+            currentPlayer.getArrayNum()[index] = number;
             if (number == pcNum) {
-                System.out.println("Great, " + currentPlayer.getName() + " win!");
+                System.out.println("Great, " + currentPlayer.getName() + " guessNumber = " + pcNum + " with " + (index + 1) + " attempts");
+                System.out.println(p1.getName() + "s numbers is " + Arrays.toString(nums1));
+                System.out.println(p2.getName() + "s numbers is " + Arrays.toString(nums2));
                 break;
             } else if (number > pcNum) {
                 System.out.println(currentPlayer.getName() + "'s" + " num is bigger then mine");
@@ -30,6 +43,25 @@ public class GuessNumber {
                 System.out.println(currentPlayer.getName() + "'s" + " num is smaller then mine");
             }
             currentPlayer = currentPlayer == p1 ? p2 : p1;
+
         } while (true);
     }
+
+    public int[] initArray() {
+        int[] array = new int[10];
+        Arrays.fill(array, Integer.MIN_VALUE);
+        return array;
+    }
+
+    public int findIndex(int[] array) {
+        int lastIndex = Integer.MIN_VALUE;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == Integer.MIN_VALUE) {
+                lastIndex = i;
+                break;
+            }
+        }
+        return lastIndex;
+    }
 }
+
