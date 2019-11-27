@@ -9,8 +9,10 @@ public class GuessNumberTest {
         System.out.println("Edit second name: ");
         Player p2 = new Player(scan.nextLine());
         GuessNumber game = new GuessNumber(p1, p2);
+
         String answer;
         do {
+            System.out.println("Calculator run!");
             game.startGame();
             while (true) {
                 System.out.println("Do u want to continue? Say yes or no...");
