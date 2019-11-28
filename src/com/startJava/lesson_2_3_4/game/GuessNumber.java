@@ -17,20 +17,20 @@ public class GuessNumber {
         int pcNum = (int) (Math.random() * 101);
         System.out.println("You have 10 attempts! " + p1 + " and " + p2);
         Player currentPlayer = p1;
-        p1.setArrayNum(initArray());
-        p2.setArrayNum(initArray());
+        p1.setAttempts(initArray());
+        p2.setAttempts(initArray());
         do {
             System.out.println(currentPlayer.getName() + " play game ");
-            int index = findIndex(currentPlayer.getArrayNum());
-            int[] nums1 = Arrays.copyOf(p1.getArrayNum(), index);
-            int[] nums2 = Arrays.copyOf(p2.getArrayNum(), index);
+            int index = findIndex(currentPlayer.getAttempts());
+            int[] nums1 = Arrays.copyOf(p1.getAttempts(), index);
+            int[] nums2 = Arrays.copyOf(p2.getAttempts(), index);
             if (index == -1) {
                 System.out.println("Players, you have run out of attempts ");
                 System.out.println(Arrays.toString(nums1));
                 break;
             }
 
-            int number = (currentPlayer.getArrayNum()[index] = scanner.nextInt());
+            int number = (currentPlayer.getAttempts()[index] = scanner.nextInt());
             if (number == pcNum) {
                 System.out.println("Great, " + currentPlayer.getName() + " guessNumber = " + pcNum + " with " + (index + 1) + " attempts");
                 System.out.println(p1.getName() + "s numbers is " + Arrays.toString(nums1));
