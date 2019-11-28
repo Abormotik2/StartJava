@@ -29,9 +29,8 @@ public class GuessNumber {
                 System.out.println(Arrays.toString(nums1));
                 break;
             }
-            currentPlayer.setNumber(scanner.nextInt());
-            int number = currentPlayer.getNumber();
-            currentPlayer.getArrayNum()[index] = number;
+
+            int number = (currentPlayer.getArrayNum()[index] = scanner.nextInt());
             if (number == pcNum) {
                 System.out.println("Great, " + currentPlayer.getName() + " guessNumber = " + pcNum + " with " + (index + 1) + " attempts");
                 System.out.println(p1.getName() + "s numbers is " + Arrays.toString(nums1));
@@ -64,4 +63,3 @@ public class GuessNumber {
         return lastIndex;
     }
 }
-
