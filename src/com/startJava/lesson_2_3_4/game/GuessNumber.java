@@ -17,24 +17,15 @@ public class GuessNumber {
         int pcNum = (int) (Math.random() * 101);
         System.out.println("You have 10 attempts! " + p1 + " and " + p2);
         Player currentPlayer = p1;
-        p1.setAttempts(initArray());
-        p2.setAttempts(initArray());
         do {
+            currentPlayer.ifLose();
             System.out.println(currentPlayer.getName() + " play game ");
-            int index = findIndex(currentPlayer.getAttempts());
-            int[] nums1 = Arrays.copyOf(p1.getAttempts(), index);
-            int[] nums2 = Arrays.copyOf(p2.getAttempts(), index);
-            if (index == -1) {
-                System.out.println("Players, you have run out of attempts ");
-                System.out.println(Arrays.toString(nums1));
-                break;
-            }
-
-            int number = (currentPlayer.getAttempts()[index] = scanner.nextInt());
+            int number = scanner.nextInt();
+            currentPlayer.addAttempts(number);
             if (number == pcNum) {
-                System.out.println("Great, " + currentPlayer.getName() + " guessNumber = " + pcNum + " with " + (index + 1) + " attempts");
-                System.out.println(p1.getName() + "s numbers is " + Arrays.toString(nums1));
-                System.out.println(p2.getName() + "s numbers is " + Arrays.toString(nums2));
+            System.out.println("Great, " + currentPlayer.getName() + " guessNumber = " + pcNum + " with " + currentPlayer.lastNum() + " attempts");
+                System.out.println(p1.getName() + "s numbers is " + Arrays.toString(p1.getAttempts()));
+                System.out.println(p2.getName() + "s numbers is " + Arrays.toString(p2.getAttempts()));
                 break;
             } else if (number > pcNum) {
                 System.out.println(currentPlayer.getName() + "'s" + " num is bigger then mine");
@@ -44,22 +35,5 @@ public class GuessNumber {
             currentPlayer = currentPlayer == p1 ? p2 : p1;
 
         } while (true);
-    }
-
-    public int[] initArray() {
-        int[] array = new int[10];
-        Arrays.fill(array, Integer.MIN_VALUE);
-        return array;
-    }
-
-    public int findIndex(int[] array) {
-        int lastIndex = Integer.MIN_VALUE;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == Integer.MIN_VALUE) {
-                lastIndex = i;
-                break;
-            }
-        }
-        return lastIndex;
     }
 }
