@@ -16,10 +16,6 @@ public class GuessNumber {
         this.p2 = player2;
     }
 
-    public void addNum() {
-        number = scanner.nextInt();
-    }
-
     public void startGame() {
         pcNum = (int) (Math.random() * 101);
         System.out.println("You have 10 attempts! " + p1 + " and " + p2);
@@ -31,14 +27,18 @@ public class GuessNumber {
                 System.out.println(p2.getName() + "s numbers is " + Arrays.toString(p2.getAttempts()));
                 break;
             }
-            System.out.println(currentPlayer.getName() + " play game ");
             addNum();
-            currentPlayer.addAttempt(number);
             if(!checkNum(number)){
                 break;
             }
             currentPlayer = currentPlayer == p1 ? p2 : p1;
         }
+    }
+
+    private void addNum() {
+        number = scanner.nextInt();
+        System.out.println(currentPlayer.getName() + " play game ");
+        currentPlayer.addAttempt(number);
     }
 
     private boolean checkNum(int number) {
