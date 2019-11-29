@@ -11,22 +11,13 @@ public class Player {
         this.name = name;
     }
 
-    public void addAttempts(int number) {
+    public void addAttempt(int number) {
         attempts[iterator] = number;
         iterator++;
     }
 
     public int lastNum() {
         return iterator;
-    }
-
-    public boolean ifLose() {
-        if (iterator > 10) {
-            System.out.println("Players, you have run out of attempts ");
-            return false;
-        } else {
-            return true;
-        }
     }
 
     public String getName() {
