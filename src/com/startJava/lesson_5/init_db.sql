@@ -1,6 +1,6 @@
 -- init database
 
-INSERT INTO Robots(modelName, mark, height, weight, status, origin, launch, kaijuKill)
+INSERT INTO robots(modelName, mark, height, weight, status, origin, launch, kaijuKill)
     VALUES
         ('Gipsy Danger',    'Mark-3',	'79.25',  '1.980',  'Destroyed',  'USA',       '10.07.2017',  '9'),
         ('Gipsy Avenger',   'Mark-6',	'81.77',  '2.000',  'Destroyed',  'USA',       '12.01.2034',  '1'),
