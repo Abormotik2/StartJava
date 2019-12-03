@@ -20,7 +20,6 @@ public class ArrayAvgMain {
             if (numbers[i] < avg) {
                 System.out.println("The low compare(avg) number is: " + numbers[i]);
             }
-
         }
     }
 }
