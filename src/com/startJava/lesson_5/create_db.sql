@@ -1,6 +1,6 @@
 --create database
 
-CREATE TABLE Robots (
+CREATE TABLE robots (
     id        SERIAL PRIMARY KEY,
     modelname TEXT,
     mark      TEXT,
