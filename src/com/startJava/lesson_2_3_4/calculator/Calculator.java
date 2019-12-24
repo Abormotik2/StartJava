@@ -2,8 +2,8 @@ package com.startJava.lesson_2_3_4.calculator;
 
 public class Calculator {
 
-    private int num1 = -1;
-    private int num2 = -1;
+    private double num1;
+    private double num2;
     private char sign = '\0';
     private String[] symbols;
 
@@ -12,29 +12,29 @@ public class Calculator {
     }
 
     public void operation() {
-        num1 = Integer.parseInt(symbols[0]);
-        if (num1 < 0) {
-            System.out.println("First number not positive!");
+        try {
+            num1 = Double.parseDouble(symbols[0]);
+            sign = symbols[1].charAt(0);
+            switch (sign) {
+                case '+':
+                case '-':
+                case '*':
+                case '/':
+                case '^':
+                case '%':
+                    break;
+                default:
+                    System.out.println("Don't support type!");
+            }
+            num2 = Double.parseDouble(symbols[2]);
+        } catch (
+                Exception e) {
+            System.out.println("Error!!!" + " Input the num1/operation/num2 into array by space!");
         }
-        sign = symbols[1].charAt(0);
-        switch (sign) {
-            case '+':
-            case '-':
-            case '*':
-            case '/':
-            case '^':
-            case '%':
-                break;
-            default:
-                System.out.println("Don't support type!");
-        }
-        num2 = Integer.parseInt(symbols[2]);
-        if (num2 < 0) {
-            System.out.println("Second number not positive!");
-        }
+
     }
 
-    public int calculate() {
+    public double calculate() {
         switch (sign) {
             case '+':
                 return num1 + num2;
@@ -43,9 +43,9 @@ public class Calculator {
             case '*':
                 return num1 * num2;
             case '/':
-                return Math.floorDiv(num1, num2);
+                return num1 / num2;
             case '^':
-                return (int) Math.pow(num1, num2);
+                return Math.pow(num1, num2);
             case '%':
                 return num1 % num2;
             default:
