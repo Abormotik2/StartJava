@@ -27,11 +27,9 @@ public class Calculator {
                     System.out.println("Don't support type!");
             }
             num2 = Double.parseDouble(symbols[2]);
-        } catch (
-                Exception e) {
+        } catch (Exception e) {
             System.out.println("Error!!!" + " Input the num1/operation/num2 into array by space!");
         }
-
     }
 
     public double calculate() {
