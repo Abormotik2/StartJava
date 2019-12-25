@@ -21,18 +21,21 @@ public class Calculator {
         } catch (Exception e) {
             System.out.println("Error!!!Not number or not add the operation!");
         }
-
-        sign = symbols[1].charAt(0);
-        switch (sign) {
-            case '+':
-            case '-':
-            case '*':
-            case '/':
-            case '^':
-            case '%':
-                break;
-            default:
-                System.out.println("Don't support type!");
+        try {
+            sign = symbols[1].charAt(0);
+            switch (sign) {
+                case '+':
+                case '-':
+                case '*':
+                case '/':
+                case '^':
+                    //  case '%':
+                    break;
+                default:
+                    System.out.println("Don't support type!");
+            }
+        } catch (Exception e) {
+            System.out.println("Error!!!Don't support type of operation!");
         }
         try {
             num2 = BigDecimal.valueOf(Double.parseDouble(symbols[2]));
