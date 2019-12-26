@@ -18,29 +18,25 @@ public class Calculator {
     public void operation() {
         try {
             num1 = BigDecimal.valueOf(Double.parseDouble(symbols[0]));
-        } catch (Exception e) {
-            System.out.println("Error!!!Not number or not add the operation!");
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("");
         }
-        try {
-            sign = symbols[1].charAt(0);
-            switch (sign) {
-                case '+':
-                case '-':
-                case '*':
-                case '/':
-                case '^':
-                    //  case '%':
-                    break;
-                default:
-                    System.out.println("Don't support type!");
-            }
-        } catch (Exception e) {
-            System.out.println("Error!!!Don't support type of operation!");
+        sign = symbols[1].charAt(0);
+        switch (sign) {
+            case '+':
+            case '-':
+            case '*':
+            case '/':
+            case '^':
+                //  case '%':
+                break;
+            default:
+                throw new IllegalArgumentException("");
         }
         try {
             num2 = BigDecimal.valueOf(Double.parseDouble(symbols[2]));
-        } catch (Exception e) {
-            System.out.println("Error!!!Edit pls the second number,not symbol or any others variables");
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("");
         }
     }
 
@@ -59,8 +55,7 @@ public class Calculator {
             //  case '%':
             //      return num1 % num2;
             default:
-                System.out.println("Calc Error!");
+                throw new IllegalArgumentException("");
         }
-        return new BigDecimal(0);
     }
 }
