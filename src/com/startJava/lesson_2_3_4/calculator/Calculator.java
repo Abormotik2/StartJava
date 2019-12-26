@@ -15,11 +15,11 @@ public class Calculator {
         this.symbols = symbols;
     }
 
-    public void operation() {
+    public void operation() throws Exception {
         try {
             num1 = BigDecimal.valueOf(Double.parseDouble(symbols[0]));
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("");
+            throw new Exception("Error!!!Not number or not add the operation!");
         }
         sign = symbols[1].charAt(0);
         switch (sign) {
@@ -31,16 +31,16 @@ public class Calculator {
                 //  case '%':
                 break;
             default:
-                throw new IllegalArgumentException("");
+                throw new Exception("Dont support type!");
         }
         try {
             num2 = BigDecimal.valueOf(Double.parseDouble(symbols[2]));
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("");
+            throw new Exception("Error!!!Not number or not add the operation!");
         }
     }
 
-    public BigDecimal calculate() {
+    public BigDecimal calculate() throws Exception {
         switch (sign) {
             case '+':
                 return num1.add(num2);
@@ -51,11 +51,15 @@ public class Calculator {
             case '/':
                 return num1.divide(num2, 10, ROUND_HALF_UP);
             case '^':
-                return num1.pow(num2.intValue());
-            //  case '%':
-            //      return num1 % num2;
+                int powNum = num2.intValue();
+                if (powNum < 0) {
+                    return BigDecimal.valueOf(1.0 / num1.pow(powNum * -1).doubleValue());
+                }
+                    return num1.pow(powNum);
+                //  case '%':
+                //      return num1 % num2;
             default:
-                throw new IllegalArgumentException("");
+                throw new Exception("Dont support type!");
         }
     }
 }
